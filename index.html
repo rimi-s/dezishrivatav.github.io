@@ -1,94 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dezi Shrivastav</title>
   <style>
     :root {
       --bg: #0a192f;
-      --bg-alt: #112240;
-      --text-light: #ccd6f6;
+      --light: #ccd6f6;
+      --dim: #8892b0;
       --accent: #64ffda;
     }
-    * { box-sizing: border-box; margin:0; padding:0; }
-    body { font-family: 'Segoe UI', sans-serif; color: var(--text-light); display:flex; }
-    nav { position: fixed; top: 0; left:0; width:200px; height:100vh; background: var(--bg); padding:2rem; }
-    nav a { display:block; color: var(--accent); margin:1rem 0; text-decoration:none; font-weight:bold; }
-    main { margin-left:200px; padding:2rem; background: var(--bg-alt); flex:1; }
-    header { text-align:left; margin-bottom:2rem; }
-    h1 { font-size:2.5rem; color: var(--accent); }
-    .tagline { font-size:1.2rem; margin-bottom:1rem; }
-    .resume-button { color: var(--bg-alt); background: var(--accent); padding:0.7rem 1.2rem; border:none; border-radius:4px; cursor:pointer; text-decoration:none; }
-    section { margin:4rem 0; }
-    section h2 { border-bottom:2px solid var(--accent); padding-bottom:0.5rem; margin-bottom:1rem; }
-    .card { background: var(--bg); padding:1.5rem; border-radius:6px; margin-bottom:1.5rem; }
-    .card h3 { color: var(--accent); }
-    footer { text-align:center; padding:2rem 0; font-size:0.9rem; }
-    @media (max-width:768px) {
-      nav { position:relative; width:100%; height:auto; display:flex; justify-content:center; }
-      main { margin-left:0; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--light);
+      overflow-x: hidden;
+    }
+
+    main {
+      display: flex;
+      height: 100vh;
+      flex-direction: row;
+    }
+
+    .left {
+      flex: 1;
+      background-color: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: 2rem;
+    }
+
+    .left-content {
+      text-align: left;
+    }
+
+    .left h1 {
+      font-size: 3rem;
+      color: var(--accent);
+    }
+
+    .left p {
+      font-size: 1.2rem;
+      color: var(--dim);
+      margin-top: 1rem;
+    }
+
+    .right {
+      flex: 2;
+      padding: 4rem 2rem;
+      overflow-y: auto;
+    }
+
+    .section {
+      margin-bottom: 6rem;
+      opacity: 0.4;
+      transition: opacity 0.3s ease;
+    }
+
+    .section.active {
+      opacity: 1;
+    }
+
+    .section h2 {
+      color: var(--accent);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .contact-icons {
+      margin-top: 2rem;
+    }
+
+    .contact-icons a {
+      margin-right: 1.2rem;
+      color: var(--accent);
+      font-size: 1.8rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-icons a:hover {
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+      }
+
+      .left {
+        height: auto;
+        text-align: center;
+        padding: 3rem 1rem;
+      }
+
+      .left-content {
+        text-align: center;
+      }
+
+      .right {
+        padding: 2rem 1rem;
+      }
     }
   </style>
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <main>
-    <header>
+<main>
+  <div class="left">
+    <div class="left-content">
       <h1>Dezi Shrivastav</h1>
-      <p class="tagline">Java Backend Developer crafting scalable systems.</p>
-      <a href="DeziShrivastav_Resume.pdf" class="resume-button" target="_blank">Download Resume</a>
-    </header>
+      <p>Java Backend Developer</p>
+    </div>
+  </div>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>A backend-focused Java developer with solid Spring Boot, AEM and REST API experience. Passionate about building robust systems and clean code.</p>
-    </section>
+  <div class="right" id="content">
+    <div class="section" id="about">
+      <h2>About</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. You can update this with your personal introduction.</p>
+    </div>
 
-    <section id="skills">
-      <h2>Technical Skills</h2>
-      <div class="card">
-        <ul>
-          <li>Java, Spring Boot, AEM, Hibernate</li>
-          <li>RESTful APIs, Camunda, JUnit, Mockito</li>
-          <li>MySQL, MongoDB, Git, Jenkins</li>
-        </ul>
-      </div>
-    </section>
+    <div class="section" id="skills">
+      <h2>Skills</h2>
+      <p>Java, Spring Boot, Hibernate, AEM, REST APIs, MongoDB, Jenkins, Git, JUnit, Mockito</p>
+    </div>
 
-    <section id="projects">
+    <div class="section" id="projects">
       <h2>Projects</h2>
-      <div class="card">
-        <h3>Firm Risk Management Technology</h3>
-        <p>Designed microservices & REST APIs using Java 8, Spring Boot; integrated Camunda BPMN workflows; documented APIs with Swagger.</p>
-      </div>
-      <div class="card">
-        <h3>Wealth Management Technology</h3>
-        <p>Built Spring Boot service, automated AEM workflow for asset updates and feedback reporting.</p>
-      </div>
-      <div class="card">
-        <h3>Hostel Management System</h3>
-        <p>VB.NET/C# desktop app for room allocation, billing, and reporting.</p>
-      </div>
-    </section>
+      <p>This section can include a list of your projects with links and tech stack. We'll style it later with cards or grids.</p>
+    </div>
 
-    <section id="contact">
+    <div class="section" id="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:dezirimisinha666n@gmail.com" style="color:var(--accent);">dezirimisinha666n@gmail.com</a></p>
-      <p>LinkedIn &bull; GitHub</p>
-    </section>
+      <p>Feel free to reach out!</p>
+      <div class="contact-icons">
+        <a href="mailto:dezirimisinha666n@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/rimi-s" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/dezi-shrivastav-85a8b515b/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+</main>
 
-    <footer>
-      &copy; 2025 Dezi Shrivastav. Built inspired by Brittany Chiang.
-    </footer>
-  </main>
+<script>
+  const sections = document.querySelectorAll('.section');
+
+  function handleScroll() {
+    const scrollY = window.scrollY + window.innerHeight / 2;
+
+    sections.forEach((section) => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+
+      if (scrollY > top && scrollY < top + height) {
+        section.classList.add('active');
+      } else {
+        section.classList.remove('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('load', handleScroll); // trigger on page load
+</script>
 
 </body>
 </html>
