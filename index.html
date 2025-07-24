@@ -1,196 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dezi Shrivastav | Java Developer</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Dezi Shrivastav</title>
   <style>
     :root {
-      --primary: #2c3e50;
-      --accent: #3498db;
-      --light: #f4f6f8;
+      --bg: #0a192f;
+      --bg-alt: #112240;
+      --text-light: #ccd6f6;
+      --accent: #64ffda;
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background-color: var(--light);
-      color: #333;
-    }
-
-    header {
-      background-color: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 3rem 1rem 2rem 1rem;
-    }
-
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid white;
-      margin-bottom: 1rem;
-    }
-
-    .resume-button {
-      display: inline-block;
-      padding: 0.7rem 1.5rem;
-      margin-top: 1rem;
-      background-color: var(--accent);
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 25px;
-      transition: background-color 0.3s ease;
-    }
-
-    .resume-button:hover {
-      background-color: #74b9ff;
-    }
-
-    section {
-      padding: 2rem 1rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h2 {
-      color: var(--primary);
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.5rem;
-      margin-top: 2rem;
-    }
-
-    .card {
-      background: white;
-      border-radius: 10px;
-      padding: 1rem 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 0 12px rgba(0,0,0,0.05);
-    }
-
-    ul {
-      padding-left: 1.5rem;
-    }
-
-    a {
-      color: var(--accent);
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: var(--primary);
-      color: white;
-      margin-top: 2rem;
-    }
-
-    @media (max-width: 600px) {
-      .profile-img {
-        width: 100px;
-        height: 100px;
-      }
-
-      h1 {
-        font-size: 1.5rem;
-      }
-
-      .resume-button {
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
-      }
+    * { box-sizing: border-box; margin:0; padding:0; }
+    body { font-family: 'Segoe UI', sans-serif; color: var(--text-light); display:flex; }
+    nav { position: fixed; top: 0; left:0; width:200px; height:100vh; background: var(--bg); padding:2rem; }
+    nav a { display:block; color: var(--accent); margin:1rem 0; text-decoration:none; font-weight:bold; }
+    main { margin-left:200px; padding:2rem; background: var(--bg-alt); flex:1; }
+    header { text-align:left; margin-bottom:2rem; }
+    h1 { font-size:2.5rem; color: var(--accent); }
+    .tagline { font-size:1.2rem; margin-bottom:1rem; }
+    .resume-button { color: var(--bg-alt); background: var(--accent); padding:0.7rem 1.2rem; border:none; border-radius:4px; cursor:pointer; text-decoration:none; }
+    section { margin:4rem 0; }
+    section h2 { border-bottom:2px solid var(--accent); padding-bottom:0.5rem; margin-bottom:1rem; }
+    .card { background: var(--bg); padding:1.5rem; border-radius:6px; margin-bottom:1.5rem; }
+    .card h3 { color: var(--accent); }
+    footer { text-align:center; padding:2rem 0; font-size:0.9rem; }
+    @media (max-width:768px) {
+      nav { position:relative; width:100%; height:auto; display:flex; justify-content:center; }
+      main { margin-left:0; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="DEZI_SHRIVASTAV.jpg" alt="Profile Photo" class="profile-img">
-    <h1>Dezi Shrivastav</h1>
-    <p>Java Backend Developer | Spring Boot | AEM | Hibernate</p>
-    <a class="resume-button" href="DeziShrivastav_Resume.pdf" target="_blank">Download Resume</a>
-  </header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I'm a dynamic and adaptable Java developer with a strong foundation in backend development using Spring Boot, AEM, and RESTful APIs.
-      I enjoy learning and thrive in fast-paced environments where clean code and scalable architecture matter.
-    </p>
-  </section>
+  <main>
+    <header>
+      <h1>Dezi Shrivastav</h1>
+      <p class="tagline">Java Backend Developer crafting scalable systems.</p>
+      <a href="DeziShrivastav_Resume.pdf" class="resume-button" target="_blank">Download Resume</a>
+    </header>
 
-  <section>
-    <h2>Technical Skills</h2>
-    <div class="card">
-      <ul>
-        <li><strong>Languages:</strong> Java</li>
-        <li><strong>Frameworks:</strong> Spring Boot, AEM, Camunda BPMN</li>
-        <li><strong>Testing:</strong> JUnit, Mockito</li>
-        <li><strong>Databases:</strong> MySQL, MongoDB</li>
-        <li><strong>Tools:</strong> Git, JIRA, Jenkins, TeamCity, Postman</li>
-      </ul>
-    </div>
-  </section>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>A backend-focused Java developer with solid Spring Boot, AEM and REST API experience. Passionate about building robust systems and clean code.</p>
+    </section>
 
-  <section>
-    <h2>Projects</h2>
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="card">
+        <ul>
+          <li>Java, Spring Boot, AEM, Hibernate</li>
+          <li>RESTful APIs, Camunda, JUnit, Mockito</li>
+          <li>MySQL, MongoDB, Git, Jenkins</li>
+        </ul>
+      </div>
+    </section>
 
-    <div class="card">
-      <h3>Firm Risk Management Technology</h3>
-      <ul>
-        <li>Designed REST APIs and microservices with validations and Swagger docs.</li>
-        <li>Integrated Camunda BPMN workflows and tested using JUnit/BDD.</li>
-        <li><strong>Tech:</strong> Java 8, Spring Boot, MongoDB</li>
-      </ul>
-    </div>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="card">
+        <h3>Firm Risk Management Technology</h3>
+        <p>Designed microservices & REST APIs using Java 8, Spring Boot; integrated Camunda BPMN workflows; documented APIs with Swagger.</p>
+      </div>
+      <div class="card">
+        <h3>Wealth Management Technology</h3>
+        <p>Built Spring Boot service, automated AEM workflow for asset updates and feedback reporting.</p>
+      </div>
+      <div class="card">
+        <h3>Hostel Management System</h3>
+        <p>VB.NET/C# desktop app for room allocation, billing, and reporting.</p>
+      </div>
+    </section>
 
-    <div class="card">
-      <h3>Wealth Management Technology</h3>
-      <ul>
-        <li>Built a Spring Boot service for feedback reports and AEM asset automation.</li>
-        <li>Ensured robust API performance, participated in production releases.</li>
-        <li><strong>Tech:</strong> Java, Spring Boot, MySQL, AEM</li>
-      </ul>
-    </div>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:dezirimisinha666n@gmail.com" style="color:var(--accent);">dezirimisinha666n@gmail.com</a></p>
+      <p>LinkedIn &bull; GitHub</p>
+    </section>
 
-    <div class="card">
-      <h3>Hostel Management System</h3>
-      <ul>
-        <li>VB.NET/C# app for login, room allocation, billing, reporting.</li>
-        <li><strong>Tech:</strong> VB.NET, C#, MySQL</li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>Education</h2>
-    <div class="card">
-      <ul>
-        <li><strong>MS (Research)</strong> – IIT Guwahati | 8.72 CGPA</li>
-        <li><strong>B.Tech (EEE)</strong> – MMMUT Gorakhpur | 8.37 CGPA</li>
-        <li><strong>Diploma (ECE)</strong> – GGPL Lucknow | 78.95%</li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <div class="card">
-      <p>Email: <a href="mailto:dezirimisinha666n@gmail.com">dezirimisinha666n@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/dezi-shrivastav-85a8b515b/" target="_blank">linkedin.com/in/dezi-shrivastav</a></p>
-      <p>GitHub: <a href="https://github.com/rimi-s" target="_blank">github.com/rimi-s</a></p>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 Dezi Shrivastav. All rights reserved.
-  </footer>
+    <footer>
+      &copy; 2025 Dezi Shrivastav. Built inspired by Brittany Chiang.
+    </footer>
+  </main>
 
 </body>
 </html>
