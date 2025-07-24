@@ -5,148 +5,187 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dezi Shrivastav | Java Developer</title>
   <style>
+    :root {
+      --primary: #2c3e50;
+      --accent: #3498db;
+      --light: #f4f6f8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f6f8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
+      background-color: var(--light);
       color: #333;
     }
+
     header {
-      background-color: #2d3436;
+      background-color: var(--primary);
       color: white;
-      padding: 2rem;
       text-align: center;
+      padding: 3rem 1rem 2rem 1rem;
     }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 1rem;
+    }
+
+    .resume-button {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      margin-top: 1rem;
+      background-color: var(--accent);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 25px;
+      transition: background-color 0.3s ease;
+    }
+
+    .resume-button:hover {
+      background-color: #74b9ff;
+    }
+
     section {
-      padding: 2rem;
+      padding: 2rem 1rem;
       max-width: 1000px;
       margin: auto;
     }
-    h1, h2 {
-      margin-top: 0;
+
+    h2 {
+      color: var(--primary);
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+      margin-top: 2rem;
     }
-    .project, .job {
+
+    .card {
       background: white;
-      padding: 1rem;
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
       margin-bottom: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+      box-shadow: 0 0 12px rgba(0,0,0,0.05);
     }
+
     ul {
       padding-left: 1.5rem;
     }
+
+    a {
+      color: var(--accent);
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
-      font-size: 0.9rem;
-      background-color: #2d3436;
+      background-color: var(--primary);
       color: white;
+      margin-top: 2rem;
     }
-    a {
-      color: #0984e3;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      background-color: #0984e3;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    .button:hover {
-      background-color: #74b9ff;
+
+    @media (max-width: 600px) {
+      .profile-img {
+        width: 100px;
+        height: 100px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .resume-button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
+    <img src="https://avatars.githubusercontent.com/u/141252509?s=400&v=4" alt="Profile Photo" class="profile-img">
     <h1>Dezi Shrivastav</h1>
     <p>Java Backend Developer | Spring Boot | AEM | Hibernate</p>
-    <a class="button" href="DeziShrivastav_Resume.pdf" target="_blank">Download Resume</a>
+    <a class="resume-button" href="DeziShrivastav_Resume.pdf" target="_blank">Download Resume</a>
   </header>
 
   <section>
     <h2>About Me</h2>
     <p>
       I'm a dynamic and adaptable Java developer with a strong foundation in backend development using Spring Boot, AEM, and RESTful APIs.
-      With a passion for learning and continuous improvement, I thrive in fast-paced environments and enjoy building scalable and maintainable systems.
+      I enjoy learning and thrive in fast-paced environments where clean code and scalable architecture matter.
     </p>
   </section>
 
   <section>
     <h2>Technical Skills</h2>
-    <ul>
-      <li><strong>Languages:</strong> Java</li>
-      <li><strong>Frameworks:</strong> Spring Boot, AEM, Camunda BPMN</li>
-      <li><strong>Testing:</strong> JUnit, Mockito</li>
-      <li><strong>Databases:</strong> MySQL, MongoDB (JDBC, Prepared Statements)</li>
-      <li><strong>Tools:</strong> Git, JIRA, Jenkins, TeamCity, Bitbucket, Postman</li>
-      <li><strong>Certifications:</strong> Core Dot Net, SQL for Business Analytics, Data Science Bootcamp</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Experience</h2>
-    <div class="job">
-      <h3>Software Developer Consultant – Genpact</h3>
-      <p><em>Aug 2022 – Present | Bengaluru</em></p>
+    <div class="card">
       <ul>
-        <li>Built Java backend services for Firm Risk Management and Wealth Management at Morgan Stanley.</li>
-        <li>Developed REST APIs, created AEM components and workflows, and automated reporting with Excel exports.</li>
-        <li>Used Camunda BPMN for workflow design, JUnit/Mockito for testing, and improved CI/CD with Jenkins.</li>
+        <li><strong>Languages:</strong> Java</li>
+        <li><strong>Frameworks:</strong> Spring Boot, AEM, Camunda BPMN</li>
+        <li><strong>Testing:</strong> JUnit, Mockito</li>
+        <li><strong>Databases:</strong> MySQL, MongoDB</li>
+        <li><strong>Tools:</strong> Git, JIRA, Jenkins, TeamCity, Postman</li>
       </ul>
     </div>
   </section>
 
   <section>
     <h2>Projects</h2>
-    <div class="project">
+
+    <div class="card">
       <h3>Firm Risk Management Technology</h3>
       <ul>
-        <li>Designed microservices and REST APIs with request validations for core risk operations.</li>
-        <li>Integrated Camunda BPMN workflows, applied BDD testing, and documented APIs with Swagger.</li>
-        <li><strong>Tech:</strong> Java 8, Spring Boot, MongoDB, Swagger, JUnit, Mockito</li>
+        <li>Designed REST APIs and microservices with validations and Swagger docs.</li>
+        <li>Integrated Camunda BPMN workflows and tested using JUnit/BDD.</li>
+        <li><strong>Tech:</strong> Java 8, Spring Boot, MongoDB</li>
       </ul>
     </div>
 
-    <div class="project">
+    <div class="card">
       <h3>Wealth Management Technology</h3>
       <ul>
-        <li>Developed Spring Boot service to process feedback and generate reports with automated emails.</li>
-        <li>Created AEM workflows for asset updates, ensured data integrity with SQL and stored procedures.</li>
-        <li><strong>Tech:</strong> Java, Spring Boot, MySQL, AEM, JUnit, Mockito</li>
+        <li>Built a Spring Boot service for feedback reports and AEM asset automation.</li>
+        <li>Ensured robust API performance, participated in production releases.</li>
+        <li><strong>Tech:</strong> Java, Spring Boot, MySQL, AEM</li>
       </ul>
     </div>
 
-    <div class="project">
-      <h3>Hostel Management System (Training Project)</h3>
+    <div class="card">
+      <h3>Hostel Management System</h3>
       <ul>
-        <li>Windows Forms app using VB.NET & C# for hostel operations like login, billing, and room allocation.</li>
+        <li>VB.NET/C# app for login, room allocation, billing, reporting.</li>
+        <li><strong>Tech:</strong> VB.NET, C#, MySQL</li>
       </ul>
     </div>
   </section>
 
   <section>
     <h2>Education</h2>
-    <ul>
-      <li><strong>MS (Research) in Energy Sciences and Engineering</strong> – IIT Guwahati (2020 – 2022) | CGPA: 8.72/10</li>
-      <li><strong>B.Tech in Electrical Engineering</strong> – MMMUT, Gorakhpur (2016 – 2019) | CGPA: 8.37/10</li>
-      <li><strong>Diploma in Electronics Engineering</strong> – GGPL, Lucknow (2013 – 2016) | 78.95%</li>
-    </ul>
+    <div class="card">
+      <ul>
+        <li><strong>MS (Research)</strong> – IIT Guwahati | 8.72 CGPA</li>
+        <li><strong>B.Tech (EEE)</strong> – MMMUT Gorakhpur | 8.37 CGPA</li>
+        <li><strong>Diploma (ECE)</strong> – GGPL Lucknow | 78.95%</li>
+      </ul>
+    </div>
   </section>
 
   <section>
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:dezirimisinha666n@gmail.com">dezirimisinha666n@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/dezi-shrivastav-85a8b515b/" target="_blank">linkedin.com/in/dezi-shrivastav</a></p>
-    <p>GitHub: <a href="https://github.com/rimi-s" target="_blank">github.com/rimi-s</a></p>
+    <div class="card">
+      <p>Email: <a href="mailto:dezirimisinha666n@gmail.com">dezirimisinha666n@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/dezi-shrivastav-85a8b515b/" target="_blank">linkedin.com/in/dezi-shrivastav</a></p>
+      <p>GitHub: <a href="https://github.com/rimi-s" target="_blank">github.com/rimi-s</a></p>
+    </div>
   </section>
 
   <footer>
